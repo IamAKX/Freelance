@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:background="@color/themed_background"
+    tools:context="com.akash.applications.freelance.MenuFragments.Favourite">
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_marginRight="10dp"
+        android:id="@+id/hire_home_recyclerview"
+        android:clipChildren="true"
+        tools:listitem="@layout/home_menu_card"/>
+
+    <com.eyalbira.loadingdots.LoadingDots
+        android:id="@+id/hire_home_loading_dots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:LoadingDots_dots_color="#9e9e9e"
+        app:LoadingDots_loop_start_delay="0"
+        app:LoadingDots_dots_count="4"/>
+
+</RelativeLayout>

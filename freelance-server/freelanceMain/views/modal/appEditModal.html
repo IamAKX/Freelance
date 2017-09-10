@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="form-group">
+        <h4>
+            UPDATE DETAILS
+            <a class="pull-right" ng-click="close()" style="text-decoration:None">X</a>
+        </h4>
+
+        <hr>
+        <div class="form-group form-group-lg col-md-6">
+            <input type="text" class="form-control input-large" style="{ width: 550px }" id="usr" ng-model="appData.name">
+        </div>
+        <div class="form-group form-group-lg col-md-6">
+            <input type="text" class="form-control" id="usr" ng-model="appData.version">
+        </div>
+        <div class="form-group form-group-lg col-md-12">
+            <label for="usr">DESCRIPTION (markdown)</label>
+            <textarea class="form-control" rows="5" id="comment" ng-model="appData.comment"></textarea>
+
+        </div>
+        <hr>
+        <hr>
+        <button class="btn btn-primary" ng-click="updateAppData()">UPDATE</button>
+        <button class="btn btn-danger" ng-click="close()">CLOSE</button>
+    </div>
+</div>
+</div>

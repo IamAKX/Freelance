@@ -1,0 +1,56 @@
+StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            //If we are getting success from server
+                            Log.i("Checking", response + " ");
+                            if(new ServerReply(response).getStatus())
+                            {
+                            }
+
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            //You can handle error here if you want
+
+                            NetworkResponse networkResponse = error.networkResponse;
+                            Log.i("Checking", new String(error.networkResponse.data));
+                            if(networkResponse != null && networkResponse.data != null)
+                            {
+                                switch (networkResponse.statusCode)
+                                {
+
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    }) {
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String,String> params = new HashMap<>();
+                    params.put("authorization", "Bearer "+ new SessionData(context).getSessionKey());
+                    return params;
+                }
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String, String> params = new HashMap<>();
+                    //Adding parameters to request
+
+                    return params;
+                }
+            };
+
+            //Adding the string request to the queue
+            stringRequest.setShouldCache(false);
+            stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                    0,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+            ));
+            RequestQueue requestQueue = Volley.newRequestQueue(context);
+            requestQueue.getCache().clear();
+
+            requestQueue.add(stringRequest);

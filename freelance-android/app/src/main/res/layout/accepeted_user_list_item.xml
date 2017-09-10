@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_weight="5"
+        android:padding="5dp"
+        android:weightSum="11">
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/userListImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/userdp"/>
+
+        <LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/userListName"
+                android:layout_weight="5"
+                android:layout_width="match_parent"
+                android:textSize="16sp"
+                android:text="@string/hello_world"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                    android:id="@+id/library_decimal_ratingbar"
+                    android:layout_width="120dp"
+                    android:layout_height="22dp"
+                    android:stepSize="0.5"
+                    android:numStars="5"
+                    android:rating="2.5"
+                    app:mrb_progressTint="@color/colorAccent"
+                    app:mrb_secondaryProgressTint="@color/colorAccent"
+                    style="@style/Widget.MaterialRatingBar.RatingBar.Indicator"
+                    android:layout_below="@+id/name"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/feedback"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/feedback_submit"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/chat"
+            android:layout_weight="1"
+            android:elevation="4dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/message"/>
+
+        <TextView
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_weight="3"
+            android:id="@+id/userListhire"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="HIRE"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/thin_rect_border"
+            android:elevation="4dp"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/shadowColor"/>
+</LinearLayout>

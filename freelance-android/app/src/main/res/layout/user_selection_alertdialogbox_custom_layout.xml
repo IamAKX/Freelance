@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_alignParentTop="true"
+        android:id="@+id/alertImageView"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/userdp"/>
+
+    <TextView
+        android:layout_alignParentTop="true"
+        android:id="@+id/alertName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="18sp"
+        android:paddingLeft="15dp"
+        android:text="Name"
+        android:inputType="textCapWords"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:background="#90000000" />
+
+    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+        android:layout_below="@+id/alertImageView"
+        android:id="@+id/alertRatings"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:stepSize="0.5"
+        android:numStars="5"
+        android:rating="2.5"
+        app:mrb_progressTint="@color/colorPrimaryDark"
+        app:mrb_secondaryProgressTint="@color/colorPrimaryDark"
+        style="@style/Widget.MaterialRatingBar.RatingBar.Indicator" />
+
+    <TextView
+        android:id="@+id/alertCategory"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:textStyle="bold|italic"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:scrollHorizontally="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_below="@+id/alertRatings"/>
+</RelativeLayout>

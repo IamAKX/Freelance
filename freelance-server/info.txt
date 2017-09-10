@@ -1,0 +1,31 @@
+RUN
+    *intall nodejs
+        sudo apt-get update
+        sudo apt-get install npm nodejs-legacy
+        sudo npm install nodemon -g
+    *install mongodb
+        either run as a service or run mongod
+
+    *Move to freelanceMain.
+        npm install (installs all the dependency packages)
+        run nodemon just by typing nodemon in terminal(run the server on designated port .here 4000).
+
+
+APIS
+    baseurllocal = localhost:4000/api
+    baseurlglobal = http://ec2-52-27-31-104.us-west-2.compute.amazonaws.com:4000/api
+    apidocs : /apiData
+	
+    *SIGNUP
+        /user/create                req: {name,username,password,phoneNo}     res: {status,reason}    //reason is available if status is false
+        /user/checkUserValidity     req: { username}                          res: {status}
+        /user/checkPhoneValidity    req: { phoneNo}                           res: {status}
+    *LOGIN
+        /user/login                 req:{username,password}                   res:{status,reason/token}    //if status is true token is returned else reason
+
+        /user/test                  req:{}                                    res:{"hello <name>"}        //if successful
+                                    header:{authorization: Bearer <token> }   res:{status,reason}         //if fails
+
+    *otp
+        /otp/genOtp                 req:{phoneNo}                             res:{status,reson}
+        /otp/verifyOtp              req:{phoneNo,otp}                         res:{status,reson}

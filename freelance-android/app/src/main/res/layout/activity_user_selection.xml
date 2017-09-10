@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    tools:context="com.akash.applications.freelance.ProjectPushing.UserSelection">
+
+    <RelativeLayout
+        android:id="@+id/top_menu"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="7dp"
+        android:gravity="center_vertical"
+        android:elevation="10dp"
+        android:layout_marginBottom="20dp">
+
+       <EditText
+           android:id="@+id/search"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="Search by name"
+           android:layout_marginRight="10dp"
+           android:padding="5dp"
+           android:imeOptions="actionDone"
+           android:gravity="center_vertical"
+           android:background="@drawable/thin_rect_border_no_solid"
+           android:layout_toLeftOf="@+id/listUserCheckAll"/>
+
+        <CheckBox
+            android:layout_alignParentRight="true"
+            android:id="@+id/listUserCheckAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    <lb.library.PinnedHeaderListView
+        android:id="@+id/listWorkers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@null"
+        android:layout_below="@+id/top_menu"
+        android:dividerHeight="0px"
+        android:fadeScrollbars="true"
+        android:fastScrollEnabled="true"
+        android:scrollingCache="false"
+        android:layout_above="@+id/bottom_menu"
+        tools:listitem="@layout/user_selection_listview_items">
+
+    </lb.library.PinnedHeaderListView>
+
+    <RelativeLayout
+        android:id="@+id/bottom_menu"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="7dp"
+        android:elevation="10dp">
+
+        <TextView
+            android:id="@+id/userListPostButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="POST PROJECT"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:padding="8dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/button_solid_bg"
+            android:elevation="4dp"/>
+
+    </RelativeLayout>
+    <com.eyalbira.loadingdots.LoadingDots
+        android:id="@+id/user_selection_loading_dots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:LoadingDots_dots_color="#9e9e9e"
+        app:LoadingDots_loop_start_delay="0"
+        app:LoadingDots_dots_count="4"/>
+</RelativeLayout>

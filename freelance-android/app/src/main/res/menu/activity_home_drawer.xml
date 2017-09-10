@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/Home"
+            android:icon="@drawable/home"
+            android:title="Home" />
+        <!--<item-->
+            <!--android:id="@+id/Dashboard"-->
+            <!--android:icon="@drawable/dashboardbook"-->
+            <!--android:title="Dashboard" />-->
+        <item
+            android:id="@+id/PostProject"
+            android:icon="@drawable/post_project"
+            android:title="Project" />
+        <item
+            android:id="@+id/Notification"
+            android:icon="@drawable/employee_large"
+            android:title="Jobs" />
+        <item
+            android:id="@+id/Chat"
+            android:icon="@drawable/chat"
+            app:actionViewClass="android.widget.TextView"
+            android:title="Chats" />
+        <item
+            android:id="@+id/Favourite"
+            android:icon="@drawable/favourite"
+            android:title="Favourite" />
+        <item
+            android:visible="false"
+            android:id="@+id/Alerts"
+            android:icon="@drawable/notification"
+            android:title="Notifications"
+            app:actionViewClass="android.widget.TextView"/>
+    </group>
+
+    <item android:title="Privacy">
+        <menu>
+            <item
+                android:id="@+id/Account"
+                android:icon="@drawable/account"
+                android:title="Account" />
+            <item
+                android:id="@+id/ProfileSettings"
+                android:icon="@drawable/profilesetting"
+                android:title="Profile Settings" />
+            <item
+                android:id="@+id/Share"
+                android:icon="@drawable/share"
+                android:title="Share" />
+            <item
+                android:id="@+id/Logout"
+                android:icon="@drawable/logout"
+                android:title="Logout"/>
+            <item
+                android:id="@+id/About"
+                android:icon="@drawable/info"
+                android:title="About"/>
+        </menu>
+    </item>
+
+    <group>
+        <item
+            android:title="Freelace \u00a9 2017"
+            android:enabled="false"/>
+    </group>
+
+</menu>

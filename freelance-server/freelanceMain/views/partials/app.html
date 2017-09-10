@@ -1,0 +1,42 @@
+<div>
+    <button class="btn btn-info" flex="100" ng-click="upload()"> UPLOAD APP</button>
+    <hr>
+
+    <div class="panel panel-info" ng-repeat="app in apps">
+        <div class="panel-heading">
+            <h5><strong>{{app.name}}</strong>
+
+                <span class="pull-right">size:{{app.size/1046879| number: 2}}MB | Created : {{app.created_at | date:'medium'}}</span>
+            </h5>
+        </div>
+        <div class="panel-body">
+            <h5> DESCRIPTION</h5>
+            <hr>
+            <div markdown-it="app.comment"></div>
+        </div>
+        <div class="panel-footer panel-info">
+            <a href="{{app.link}}"><button class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="download"> 
+            <span class="glyphicon glyphicon-download-alt"></span>
+            DOWNLOAD
+            </button></a>
+            <button class="btn btn-info" ng-click="update(app)">
+                <span class="glyphicon glyphicon-pencil"></span>
+                EDIT
+            </button>
+            <button class="btn btn-danger" ng-click="deleteApp(app._id)">
+                <span class="glyphicon glyphicon-trash"></span>
+                DELETE
+            </button>
+            <button class="btn btn-info" ng-click-copy="{{app.link}}">
+                <span class=" glyphicon glyphicon-link "></span>
+                COPY LINK
+            </button>
+
+            <span class="pull-right ">
+                <h5><legend>{{app.version}}</legend></h5>
+            </span>
+        </div>
+
+    </div>
+
+</div>

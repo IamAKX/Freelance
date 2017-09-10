@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_sign_in"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="@drawable/splash_screen_background"
+    tools:context="com.akash.applications.freelance.SignIn">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ACCOUNT"
+                android:textSize="@dimen/subtitle"
+                android:textColor="@color/mediumGray"
+                android:textStyle="bold"
+                android:paddingLeft="2dp"
+                android:layout_margin="2dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/signInEmail"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                app:met_iconLeft="@android:drawable/ic_dialog_email"
+                app:met_iconPadding="0dp"
+                app:met_clearButton="true"
+                app:met_floatingLabel="normal" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/signInPassword"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                app:met_iconLeft="@drawable/password"
+                app:met_iconPadding="0dp"
+                app:met_clearButton="true"
+                app:met_floatingLabel="normal" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log IN"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp"
+                android:layout_gravity="right"
+                android:enabled="false"
+                android:background="@drawable/inactive_button_background"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FORGOT PASSWORD"
+                android:textSize="@dimen/subtitle"
+                android:textColor="@color/mediumGray"
+                android:textStyle="bold"
+                android:paddingLeft="2dp"
+                android:layout_margin="2dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/sms_prompt_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reset through SMS OTP"
+                android:gravity="left|center_vertical"
+                android:background="#ffffff"
+
+                android:paddingLeft="10dp"
+                />
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/expandableLayoutSMS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ael_duration="500"
+                app:ael_interpolator="fastOutLinearIn"
+                app:ael_orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/sms_child2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#ffffff"
+                    android:layout_below="@+id/sms_child1"
+                    android:padding="5dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/divider_color"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:layout_marginLeft="5dp"
+                        android:text="Enter the OTP if not verified automatically."
+                        android:textSize="15sp"/>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+                        <com.mukesh.OtpView
+                            android:id="@+id/otp_view_reset_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:inputType="number">
+                            <requestFocus/>
+                        </com.mukesh.OtpView>
+                        <Button
+                            android:id="@+id/verifyOTP"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ffffff"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/active_button_background"
+                            android:text="Verify"/>
+                    </LinearLayout>
+
+
+                    <Button
+                        android:id="@+id/resendOTP"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00ffffff"
+                        android:textColor="@color/lighterGray"
+                        android:text="Resend OTP in 5:00"
+                        android:layout_marginBottom="4dp"
+                        android:enabled="false"
+                        android:gravity="start|center_vertical"
+                        android:paddingLeft="14dp"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/sms_child1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:background="#ffffff"
+                    android:padding="5dp">
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/resetpass_Phone"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number"
+                        android:inputType="phone"
+                        android:layout_weight="2"
+                        android:imeOptions="actionDone"
+                        app:met_iconLeft="@drawable/phone"
+                        app:met_iconPadding="0dp"
+                        app:met_floatingLabel="normal"
+                        app:met_maxCharacters="10"
+                        app:met_helperText="Your registered phone number"/>
+
+                    <Button
+                        android:id="@+id/sms_done"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textColor="#ffffff"
+                        android:enabled="false"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/inactive_button_background"
+                        android:text="DONE"/>
+                </LinearLayout>
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+            <Button
+                android:id="@+id/email_prompt_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:background="#ffffff"
+                android:clickable="true"
+                android:elevation="10dp"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10dp"
+                android:text="Reset through Email verification" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color"/>
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/expandableLayoutEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ael_duration="500"
+                android:layout_marginBottom="25dp"
+                app:ael_interpolator="fastOutLinearIn"
+                app:ael_orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/email_child1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:background="#ffffff"
+                    android:padding="5dp">
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/resetpass_Email"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:layout_weight="2"
+                        android:imeOptions="actionDone"
+                        app:met_iconLeft="@android:drawable/ic_dialog_email"
+                        app:met_iconPadding="0dp"
+                        app:met_floatingLabel="normal"
+                        app:met_clearButton="true"
+                        app:met_helperText="Your registered email"/>
+
+                    <Button
+                        android:id="@+id/email_done"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginTop="8dp"
+                        android:enabled="false"
+                        android:background="@drawable/inactive_button_background"
+                        android:text="DONE"/>
+
+                        <LinearLayout
+
+                            android:id="@+id/resetThroughEmailLL"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:background="#ffffff"
+                            android:padding="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/emailOTP"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="10dp"
+                                android:inputType="number"
+                                android:layout_margin="15dp"
+                                android:hint="Enter the OTP sent to above email"
+                                android:background="@drawable/button_holo_bg"
+                                android:textColor="@color/colorAccent"
+                                android:gravity="center"
+                                android:textSize="18sp"
+                                android:textStyle="bold"/>
+
+
+                            <Button
+                                android:id="@+id/verify_email_otp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/inactive_button_background"
+                                android:enabled="false"
+                                android:text="VERIFY"
+                                android:textColor="#ffffff" />
+                        </LinearLayout>
+                </LinearLayout>
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ACTIVATE ACCOUNT"
+                android:textSize="@dimen/subtitle"
+                android:textColor="@color/mediumGray"
+                android:textStyle="bold"
+                android:paddingLeft="2dp"
+                android:layout_margin="2dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/divider_color"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/resend_email_link_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RE-send email verification link"
+                android:gravity="left|center_vertical"
+                android:background="#ffffff"
+                android:paddingLeft="10dp"
+                />
+
+            <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                android:id="@+id/expandableEmailVerificationLink"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ael_duration="500"
+                app:ael_interpolator="fastOutLinearIn"
+                app:ael_orientation="vertical">
+                <LinearLayout
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:background="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="Enter email to verify and activate account."
+                        android:textStyle="italic"
+                        android:textColor="@color/shadowColor"/>
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/reverify_Email"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:layout_weight="2"
+                        android:imeOptions="actionDone"
+                        app:met_iconLeft="@android:drawable/ic_dialog_email"
+                        app:met_iconPadding="0dp"
+                        app:met_floatingLabel="normal"
+                        app:met_clearButton="true"
+                        app:met_helperText="Your registered email"/>
+
+                    <Button
+                        android:id="@+id/revrifyemail_done"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginTop="8dp"
+                        android:enabled="false"
+                        android:background="@drawable/inactive_button_background"
+                        android:text="DONE"/>
+                </LinearLayout>
+
+            </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

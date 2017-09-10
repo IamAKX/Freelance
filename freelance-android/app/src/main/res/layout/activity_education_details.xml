@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_education_details"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/themed_background"
+    tools:context="com.akash.applications.freelance.ProfileSettingsOptions.EducationDetails">
+
+    <TextView
+        android:layout_alignParentTop="true"
+        android:id="@+id/hi_qual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HIGHEST QUALIFICATION"
+        android:textSize="@dimen/subtitle"
+        android:textColor="@color/mediumGray"
+        android:textStyle="bold"
+        android:paddingLeft="2dp"
+        android:layout_margin="2dp"/>
+
+    <TextView
+        android:layout_below="@+id/hi_qual"
+        android:id="@+id/hi_qual_div"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color"/>
+    <Spinner
+        android:layout_below="@+id/hi_qual_div"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/education_Highest_Qualification"></Spinner>
+
+    <ImageView
+        android:id="@+id/noeducation_prompt"
+        android:src="@drawable/noeducation"
+        android:layout_weight="1"
+        android:alpha="0.5"
+        android:visibility="gone"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"/>
+    <com.eyalbira.loadingdots.LoadingDots
+        android:id="@+id/getEduacationloadingDotProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:LoadingDots_dots_color="#9e9e9e"
+        app:LoadingDots_loop_start_delay="0"
+        app:LoadingDots_dots_count="4"/>
+    <ScrollView
+        android:layout_below="@+id/education_Highest_Qualification"
+        android:id="@+id/educatin_scroll"
+        android:layout_marginTop="15dp"
+        android:paddingTop="5dp"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- ________________ 5 passed ______________________ -->
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/card_5_pass"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="4dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="4dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Primary Details"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:textSize="@dimen/subtitle"
+                                android:textColor="@color/mediumGray"
+                                android:textStyle="bold"
+                                android:paddingLeft="2dp"
+                                android:layout_margin="2dp"/>
+                            <Spinner
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/yop_5_passed">
+                            </Spinner>
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/institute_5_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Institute Name"
+                                android:inputType="textCapWords"
+                                android:imeOptions="actionNext"
+                                android:textSize="15sp"/>
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/board_5_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Affiliated Board"
+                                android:inputType="textCapWords"
+                                android:imeOptions="actionNext"
+                                android:textSize="15sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2"
+                                android:orientation="horizontal">
+                                <com.rengwuxian.materialedittext.MaterialEditText
+                                    android:id="@+id/mark_5_pass"
+                                    android:layout_weight="1"
+                                    android:inputType="numberDecimal"
+                                    android:imeOptions="actionDone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Marks Obtained"
+                                    android:layout_marginRight="5dp"
+                                    android:textSize="15sp"/>
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:id="@+id/marks_unit_5_pass"
+                                    android:layout_weight="1">
+
+                                </Spinner>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+            <!-- ________________ 10 passed ______________________ -->
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/card_10_pass"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="4dp"
+                    android:visibility="gone"
+                    app:cardCornerRadius="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Secondary Details"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:textSize="@dimen/subtitle"
+                                android:textColor="@color/mediumGray"
+                                android:textStyle="bold"
+                                android:paddingLeft="2dp"
+                                android:layout_margin="2dp"/>
+                            <Spinner
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/yop_10_passed">
+                            </Spinner>
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/institute_10_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Institute Name"
+                                android:inputType="textCapWords"
+                                android:imeOptions="actionNext"
+                                android:textSize="15sp"/>
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/board_10_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Affiliated Board"
+                                android:inputType="textCapWords"
+                                android:imeOptions="actionNext"
+                                android:textSize="15sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2"
+                                android:orientation="horizontal">
+                                <com.rengwuxian.materialedittext.MaterialEditText
+                                    android:id="@+id/mark_10_pass"
+                                    android:layout_weight="1"
+                                    android:inputType="numberDecimal"
+                                    android:imeOptions="actionDone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Marks Obtained"
+                                    android:layout_marginRight="5dp"
+                                    android:textSize="15sp"/>
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:id="@+id/marks_unit_10_pass"
+                                    android:layout_weight="1">
+
+                                </Spinner>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            <!-- ________________ 12 passed ______________________ -->
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/card_12_pass"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Higher Secondary Details"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:textSize="@dimen/subtitle"
+                                android:textColor="@color/mediumGray"
+                                android:textStyle="bold"
+                                android:paddingLeft="2dp"
+                                android:layout_margin="2dp"/>
+                            <Spinner
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/yop_12_passed">
+                            </Spinner>
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/institute_12_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Institute Name"
+                                android:inputType="textCapWords"
+                                android:imeOptions="actionNext"
+                                android:textSize="15sp"/>
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/board_12_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Affiliated Board"
+                                android:inputType="textCapWords"
+                                android:imeOptions="actionNext"
+                                android:textSize="15sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2"
+                                android:orientation="horizontal">
+                                <com.rengwuxian.materialedittext.MaterialEditText
+                                    android:id="@+id/mark_12_pass"
+                                    android:layout_weight="1"
+                                    android:inputType="numberDecimal"
+                                    android:imeOptions="actionDone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Marks Obtained"
+                                    android:layout_marginRight="5dp"
+                                    android:textSize="15sp"/>
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:id="@+id/marks_unit_12_pass"
+                                    android:layout_weight="1">
+
+                                </Spinner>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+            <!-- ________________ Graduate passed ______________________ -->
+
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/card_graduate_pass"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Graduate Details"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:textSize="@dimen/subtitle"
+                                android:textColor="@color/mediumGray"
+                                android:textStyle="bold"
+                                android:paddingLeft="2dp"
+                                android:layout_margin="2dp"/>
+                            <Spinner
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/yop_graduate_passed">
+                            </Spinner>
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/institute_graduate_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Institute Name"
+                                android:inputType="textCapWords"
+                                android:imeOptions="actionNext"
+                                android:textSize="15sp"/>
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/board_graduate_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Affiliated University"
+                                android:inputType="textCapWords"
+                                android:imeOptions="actionNext"
+                                android:textSize="15sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2"
+                                android:orientation="horizontal">
+                                <com.rengwuxian.materialedittext.MaterialEditText
+                                    android:id="@+id/mark_graduate_pass"
+                                    android:layout_weight="1"
+                                    android:inputType="numberDecimal"
+                                    android:imeOptions="actionDone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Marks Obtained"
+                                    android:layout_marginRight="5dp"
+                                    android:textSize="15sp"/>
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:id="@+id/marks_unit_graduate_pass"
+                                    android:layout_weight="1">
+
+                                </Spinner>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            <!-- ________________ Post Graduate passed ______________________ -->
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/card_post_graduate_pass"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardElevation="4dp"
+                    app:cardCornerRadius="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Post Graduate Details"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentLeft="true"
+                                android:textSize="@dimen/subtitle"
+                                android:textColor="@color/mediumGray"
+                                android:textStyle="bold"
+                                android:paddingLeft="2dp"
+                                android:layout_margin="2dp"/>
+                            <Spinner
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/yop_postgraduate_passed">
+                            </Spinner>
+                        </RelativeLayout>
+                        <LinearLayout
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/institute_postgraduate_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Institute Name"
+                                android:inputType="textCapWords"
+                                android:imeOptions="actionNext"
+                                android:textSize="15sp"/>
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/board_postgraduate_pass"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textCapWords"
+                                android:imeOptions="actionNext"
+                                android:hint="Affiliated University"
+                                android:textSize="15sp"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:weightSum="2"
+                                android:orientation="horizontal">
+                                <com.rengwuxian.materialedittext.MaterialEditText
+                                    android:id="@+id/mark_postgraduate_pass"
+                                    android:layout_weight="1"
+                                    android:inputType="numberDecimal"
+                                    android:imeOptions="actionDone"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="Marks Obtained"
+                                    android:layout_marginRight="5dp"
+                                    android:textSize="15sp"/>
+                                <Spinner
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:id="@+id/marks_unit_postgraduate_pass"
+                                    android:layout_weight="1">
+
+                                </Spinner>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

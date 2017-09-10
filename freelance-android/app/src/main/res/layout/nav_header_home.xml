@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@drawable/side_nav_bar"
+    android:gravity="center_vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="horizontal"
+    android:weightSum="4"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/userProfilePicture"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginBottom="15dp"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Android Studio"
+            android:inputType="textCapWords"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:id="@+id/userEmail"
+        android:layout_width="match_parent"
+        android:gravity="left"
+        android:layout_height="wrap_content"
+        android:text="android.studio@android.com" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_weight="3">
+        <com.rm.rmswitch.RMTristateSwitch
+            android:layout_marginTop="25dp"
+            android:id="@+id/rm_triswitch_work_hire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:state="middle"
+            app:switchBkgLeftColor="@color/mediumGray"
+            app:switchBkgMiddleColor="@color/mediumGray"
+            app:switchBkgRightColor="@color/mediumGray"
+            app:switchDesign="slim"
+            app:switchToggleLeftColor="@color/white"
+            app:switchToggleLeftImage="@drawable/hire"
+            app:switchToggleMiddleColor="@color/white"
+            app:switchToggleMiddleImage="@drawable/dot"
+            app:switchToggleRightColor="@color/white"
+            app:switchToggleRightImage="@drawable/work"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/app_mode_text"
+            android:text="- MODE -"
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</LinearLayout>

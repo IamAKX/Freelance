@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/akash/Documents/AndroidProjects/Freelance/freelance-android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="696cc8835a6074adf95103d73a67820a8fc1fac8">
+        <dex dex="/home/akash/Documents/AndroidProjects/Freelance/freelance-android/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_085392e97c3db74a665607511f1575daf2a30e13/classes.dex" />
+    </item>
+
+</items>

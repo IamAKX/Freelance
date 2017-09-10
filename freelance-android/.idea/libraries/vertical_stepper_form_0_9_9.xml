@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="vertical-stepper-form-0.9.9">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/45f75125a69c206246f69663f5bc4df0e4b42216/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/45f75125a69c206246f69663f5bc4df0e4b42216/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ernestoyaquello.stepperform/vertical-stepper-form/0.9.9/80cb6cd60e4f551033c5b9bcf7e8bf586b173c4/vertical-stepper-form-0.9.9-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

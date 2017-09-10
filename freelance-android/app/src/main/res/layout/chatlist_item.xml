@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingRight="10dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:weightSum="7"
+        android:id="@+id/horLL"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <ImageView
+            android:layout_weight="2"
+            android:id="@+id/userDPCL"
+            android:src="@drawable/userdp"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+
+        <LinearLayout
+            android:id="@+id/llemp"
+            android:layout_weight="5"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/userNameCL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/userEmailCL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/callBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/call_small"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/shadowColor"
+        android:layout_below="@+id/horLL"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="10dp"/>
+</RelativeLayout>

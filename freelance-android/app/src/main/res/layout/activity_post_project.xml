@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="15dp"
+    android:background="@color/themed_background"
+    tools:context="com.akash.applications.freelance.ProjectPushing.PostProject">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="PROJECT INFORMATION"
+                        android:textSize="@dimen/subtitle"
+                        android:textColor="@color/mediumGray"
+                        android:textStyle="bold"
+                        android:paddingLeft="2dp"
+                        android:layout_margin="2dp"/>
+
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/divider_color"/>-->
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/post_project_shortName"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Short Name"
+                        android:inputType="textEmailAddress"
+                        app:met_iconLeft="@drawable/post_project"
+                        app:met_iconPadding="2dp"
+                        app:met_clearButton="true"
+                        android:layout_marginBottom="10dp"
+                        app:met_floatingLabel="normal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/edit_text_background">
+
+                        <com.rengwuxian.materialedittext.MaterialEditText
+                            android:id="@+id/post_project_details"
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:layout_margin="8dp"
+                            android:allowUndo="true"
+                            android:background="@drawable/edit_text_background"
+                            android:gravity="start"
+                            android:hint="Brief detail about project"
+                            android:inputType="textCapSentences|textMultiLine"
+                            android:textSize="15sp"
+                            app:met_hideUnderline="true"
+                            app:met_maxCharacters="200" />
+                    </LinearLayout>
+
+                    <cn.refactor.kmpautotextview.KMPAutoComplTextView
+                        android:id="@+id/post_project_tvAutoCompl"
+                        android:layout_weight="2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:hint="Select Category"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/thin_rect_border_no_solid"
+                        android:completionThreshold="1"
+                        app:completionHighlightColor="@color/colorAccent"
+                        app:completionTextColor="#80000000"
+                        app:completionTextSize="18sp"
+                        app:completionIgnoreCase="true"/>
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="WORKING DURATION RANGE"
+                        android:textSize="@dimen/subtitle"
+                        android:textColor="@color/mediumGray"
+                        android:textStyle="bold"
+                        android:paddingLeft="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/divider_color"/>-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <EditText
+                            android:layout_margin="5dp"
+                            android:padding="5dp"
+                            android:gravity="center"
+                            android:id="@+id/post_prject_startlimit"
+                            android:layout_width="60dp"
+                            android:textSize="15sp"
+                            android:inputType="number"
+                            android:background="@drawable/thin_rect_border_no_solid"
+                            android:layout_height="wrap_content"
+                            android:hint="START"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TO"
+                            android:paddingLeft="7dp"
+                            android:paddingRight="7dp"
+                            android:layout_margin="5dp"
+                            />
+
+                        <EditText
+                            android:layout_margin="5dp"
+                            android:padding="5dp"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:id="@+id/post_prject_endlimit"
+                            android:layout_width="60dp"
+                            android:textSize="15sp"
+                            android:background="@drawable/thin_rect_border_no_solid"
+                            android:layout_height="wrap_content"
+                            android:hint="END"/>
+
+                        <Spinner
+                            android:id="@+id/post_project_spinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></Spinner>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="2dp">
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="COMPLETION DEADLINE"
+                android:textSize="@dimen/subtitle"
+                android:textColor="@color/mediumGray"
+                android:textStyle="bold"
+                android:paddingLeft="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/divider_color"/>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="On or before "
+                        android:layout_marginRight="20dp"/>
+
+                    <TextView
+                        android:layout_margin="5dp"
+                        android:paddingRight="18dp"
+                        android:paddingLeft="18dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:background="@drawable/thin_rect_border_no_solid"
+                        android:id="@+id/post_project_deadline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="End Date"/>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+
+            <!--Response timeout-->
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="RESPONSE TIMEOUT"
+                        android:textSize="@dimen/subtitle"
+                        android:textColor="@color/mediumGray"
+                        android:textStyle="bold"
+                        android:paddingLeft="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="10dp"/>
+
+
+                    <RelativeLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/timeoutTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0 min"
+                            android:padding="10dp"
+                            android:textSize="18sp"
+                            android:textStyle="italic"/>
+
+                        <com.rey.material.widget.Slider
+                            android:id="@+id/responseTimeSlider"
+                            android:layout_below="@+id/timeoutTime"
+                            android:layout_marginBottom="15dp"
+                            style="@style/Material.Widget.Slider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            app:sl_discreteMode="true"
+                            app:sl_minValue="0"
+                            app:sl_maxValue="100"
+                            app:sl_value="50"
+                            android:layout_toLeftOf="@+id/post_project_spinner2"
+                            android:layout_toStartOf="@+id/post_project_spinner2" />
+
+                        <Spinner
+                            android:minWidth="100dp"
+                            android:id="@+id/post_project_spinner2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"></Spinner>
+                    </RelativeLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<md-content>
+    <md-toolbar layout="column">
+        <div class="md-toolbar-tools">
+            DETAILS OF {{projData.projectName}}
+            <span flex></span>
+            <h5>
+                <md-icon ng-bind="'alarm'"></md-icon> posted
+                <span am-time-ago="projData.createdAt"></span></h5>
+        </div>
+    </md-toolbar>
+    <md-container>
+        <md-content layout-padding style="min-width:600px" ; layout="row">
+            <div layout="column" layout-padding flex="100">
+                <div layout="row" layout-padding>
+                    <h5>
+                        <md-icon ng-bind="'reorder'"></md-icon>
+                        <b>DESCRIPTION:</b> {{projData.description}}
+                    </h5>
+                </div>
+                <md-divider></md-divider>
+                <div layout="row" layout-padding>
+                    <h5>
+                        <md-icon ng-bind="'assignment'"></md-icon>
+                        <b>CATEGORY: {{projData.category}}</b>
+                    </h5>
+                    <md-divider></md-divider>
+                    <h5>
+                        <md-icon ng-bind="'watch_later'"></md-icon>
+                        <b>DURATION: </b> {{projData.duration.start}}-{{projData.duration.end}} {{projData.duration.type}}
+                    </h5>
+                    <md-divider></md-divider>
+
+                    <h5>
+                        <md-icon ng-bind="'timeline'"></md-icon>
+                        <b>DEADLINE: </b> <span am-time-ago="projData.duration.deadline"></span>
+                    </h5>
+                </div>
+                <md-divider></md-divider>
+                <div layout="column" layout-padding>
+                    <h4>
+                        <md-icon ng-bind="'account_circle'"></md-icon>
+                        PARTICIPANTS</h4>
+                    <md-list>
+                        <md-list-item class="md-2-line" ng-repeat="p in projData.participant">
+                            <img ng-src="/images/{{p.image}}" class="md-avatar" alt="alt" />
+                            <div class="md-list-item-text" layout="column">
+                                <h4>{{ p.name }}</h4>
+                                <h4>{{ p.userName }}</h4>
+                                <h4> <b>status:</b> {{ p.status }}</h4>
+                            </div>
+                        </md-list-item>
+
+                    </md-list>
+                </div>
+            </div>
+        </md-content>
+    </md-container>
+
+</md-content>

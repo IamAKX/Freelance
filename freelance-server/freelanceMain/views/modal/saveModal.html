@@ -1,0 +1,128 @@
+<!--<md-container>
+    <div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" ng-click="close()">&times;</button>
+                <h4 class="modal-title"> Add New Api</h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="row">
+                    <div class="form-group form-group-lg col-md-6">
+                        <label for="usr">Name:</label>
+                        <input type="text" class="form-control input-large" style="{ width: 550px }" id="usr" ng-model="api.name">
+                    </div>
+                    <div class="form-group form-group-lg col-md-6">
+                        <label for="usr">Category:</label>
+                        <input type="text" class="form-control" id="usr" ng-model="api.category">
+                    </div>
+                    <div class="form-group form-group-lg col-md-12">
+                        <label for="usr">Api:</label>
+                        <input type="text" class="form-control" id="usr" ng-model="api.api">
+                    </div>
+                    <div class="form-group form-group-lg col-md-8">
+                        <label for="usr">Header:</label>
+                        <input type="text" class="form-control" id="usr" ng-model="api.header">
+                    </div>
+                    <div class="form-group form-group-lg col-md-4">
+                        <label for="usr">TYPE:</label>
+                        <input type="text" class="form-control" id="usr" ng-model="api.type">
+                    </div>
+                    <div class="form-group form-group-lg col-md-12">
+                        <label for="usr">Request Body:</label>
+                        <input type="text" class="form-control" id="usr" ng-model="api.reqBody">
+                    </div>
+                    <div class="form-group form-group-lg col-md-12">
+                        <label for="usr">Response Body:</label>
+                        <input type="text" class="form-control" id="usr" ng-model="api.resBody">
+                    </div>
+                    <div class="form-group form-group-lg col-md-12">
+                        <label for="usr">Description:</label>
+                        <input type="text" class="form-control" id="usr" ng-model="api.description">
+                    </div>
+                    <br>
+                    <div class="form-group form-group-lg col-md-12">
+                        <button class="btn btn-success" ng-click="saveNew(api)">Save</button>
+                        <button class="btn btn-danger" ng-click="close()">Close</button>
+                    </div>
+
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</md-container>-->
+
+<md-content flex="100">
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+            ADD API
+        </div>
+        <span flex></span>
+        <md-icon ng-bind="'clear'" ng-click="close()"></md-icon>
+    </md-toolbar>
+    <md-content layout-padding>
+
+        <md-content layout-gt-sm="row" style="min-width:600px; " layout-padding>
+
+            <md-input-container flex="70">
+                <label>NAME</label>
+                <input ng-model="api.name">
+            </md-input-container>
+
+            <md-input-container flex="30">
+                <label>CATEGORY</label>
+                <input ng-model="api.category">
+            </md-input-container>
+
+        </md-content>
+
+        <md-content layout-gt-sm="row" layout-padding>
+
+            <md-input-container flex="100">
+                <label>API</label>
+                <input ng-model="api.api">
+            </md-input-container>
+        </md-content>
+
+        <md-content layout-gt-sm="row" layout-padding>
+
+            <md-input-container flex="50">
+                <label>HEADER</label>
+                <input ng-model="api.header">
+            </md-input-container>
+            <md-input-container flex="50">
+                <label>TYPE</label>
+                <input ng-model="api.type">
+            </md-input-container>
+        </md-content>
+        <md-content layout-gt-sm="row" layout-padding>
+
+            <md-input-container flex="50">
+                <label>REQUEST BODY</label>
+                <input ng-model="api.reqBody">
+            </md-input-container>
+
+            <md-input-container flex="50">
+                <label>RESPONSE BODY</label>
+                <input ng-model="api.resBody">
+            </md-input-container>
+
+        </md-content>
+        <md-content layout-gt-sm="row" layout-padding>
+
+            <md-input-container flex="100">
+                <label>DESCRIPTION</label>
+                <input ng-model="api.description">
+            </md-input-container>
+        </md-content>
+        <div layout="row">
+            <span flex></span>
+            <md-button class="md-primary md-raised" ng-click="saveNew(api)">ADD</md-button>
+            <md-button class="md-primary md-raised" ng-click="close()">CLOSE</md-button>
+        </div>
+    </md-content>
+</md-content>

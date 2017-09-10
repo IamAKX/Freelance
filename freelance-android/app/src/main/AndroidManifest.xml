@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.akash.applications.freelance">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name=".ProjectPushing.FBRealtimeDB"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Register" />
+        <activity android:name=".SignIn">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="freelance.greyphase.xyz"
+                    android:path="/api/auth/verifyEmailAccount"
+                    android:scheme="http" />
+                <!-- android:path="/resetpassword" -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Home"
+            android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <receiver android:name="swarajsaaj.smscodereader.receivers.OtpReader">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".ResetPassword">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="139.59.30.223"
+                    android:scheme="http" />
+                <!-- android:path="/api/auth/verifyEmailAccount" -->
+                <!-- android:path="/resetpassword" -->
+            </intent-filter>
+        </activity>
+        <activity android:name=".Account" />
+        <activity android:name=".ChangeNumber" />
+        <activity android:name=".ChangeEmail" />
+        <activity android:name=".DeleteAccount" />
+        <activity android:name=".SetNewEmail" />
+        <activity android:name=".SetNewPhone" />
+        <activity android:name=".ChangePassword" />
+        <activity android:name=".ProfileSettings" />
+        <activity android:name=".ProfileSettingsOptions.SelectAppMode" />
+        <activity android:name=".ProfileSettingsOptions.Address" />
+        <activity android:name=".ProfileSettingsOptions.EducationDetails" />
+        <activity android:name=".ProfileSettingsOptions.Occupation" />
+        <activity android:name=".ProfileSettingsOptions.Experience" />
+        <activity android:name=".ProfileSettingsOptions.SelectCategory" />
+        <activity android:name=".CropImage" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".ProfileDetails"
+            android:label="@string/title_activity_profile_details"
+            android:theme="@style/ProfileDetals" />
+        <activity android:name=".ProjectPushing.UserSelection" />
+        <activity
+            android:name=".ProjectPushing.PostProject"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FullscreenImage"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen_image"
+            android:theme="@style/FullscreenTheme" />
+
+        <service android:name=".FBInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FBMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ViewProject" />
+        <activity android:name=".ProjectPushing.PostedProjectDetails" />
+        <activity android:name=".About" />
+        <activity android:name=".Update" />
+        <activity android:name=".ProjectPushing.ChatRoom" />
+        <activity android:name=".ProjectPushing.ProjectAgreement" />
+        <activity android:name=".ReportAbuse" />
+        <activity android:name=".Comment"></activity>
+    </application>
+
+</manifest>

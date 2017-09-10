@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_experience"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/themed_background"
+    tools:context="com.akash.applications.freelance.ProfileSettingsOptions.Experience">
+
+    <com.eyalbira.loadingdots.LoadingDots
+        android:id="@+id/getExperienceloadingDotProgress"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:LoadingDots_dots_color="#9e9e9e"
+        app:LoadingDots_loop_start_delay="0"
+        app:LoadingDots_dots_count="4"/>
+    <ScrollView
+        android:visibility="visible"
+        android:id="@+id/expereincescroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/experienceLinearContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/experience_prompt"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/experince"
+            android:alpha="0.5"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Experience"
+            android:gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            android:textColor="@color/lighterGray"/>
+    </LinearLayout>
+
+</RelativeLayout>

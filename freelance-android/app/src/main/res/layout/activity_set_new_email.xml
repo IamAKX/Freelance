@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_set_new_email"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/themed_background"
+    tools:context="com.akash.applications.freelance.SetNewEmail">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/new_Email_Input_Form"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="4dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/old_Email"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Old Email Id"
+                android:inputType="textEmailAddress"
+                android:layout_weight="2"
+                app:met_iconLeft="@android:drawable/ic_dialog_email"
+                app:met_iconPadding="0dp"
+                app:met_floatingLabel="normal"
+                app:met_helperText="Enter old email id"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/new_Email"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="New Email Id"
+                android:inputType="textEmailAddress"
+                android:layout_weight="2"
+                android:imeOptions="actionDone"
+                app:met_iconLeft="@android:drawable/ic_dialog_email"
+                app:met_iconPadding="0dp"
+                app:met_floatingLabel="normal"
+                app:met_helperText="Enter new email id"/>
+
+            <Button
+                android:id="@+id/change_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#ffffff"
+                android:enabled="false"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/inactive_button_background"
+                android:text="Change Email"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

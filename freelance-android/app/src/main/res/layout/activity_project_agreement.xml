@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:layout_margin="10dp"
+    tools:context="com.akash.applications.freelance.ProjectPushing.ProjectAgreement">
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/userDP"
+        android:layout_margin="5dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/userdp"/>
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:text="AKASH GIRI"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/userDP"
+        />
+
+    <me.zhanghai.android.materialratingbar.MaterialRatingBar
+        android:id="@+id/library_decimal_ratingbar"
+        android:layout_width="120dp"
+        android:layout_height="22dp"
+        android:stepSize="0.5"
+        android:numStars="5"
+        android:rating="0.5"
+        android:layout_marginTop="9dp"
+        app:mrb_progressTint="@color/colorAccent"
+        app:mrb_secondaryProgressTint="@color/colorAccent"
+        style="@style/Widget.MaterialRatingBar.RatingBar.Indicator"
+        android:layout_below="@+id/name"
+        android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/library_decimal_ratingbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:scrollbars="none"
+        android:layout_marginTop="17dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="4dp"
+            android:layout_margin="10dp"
+            app:cardBackgroundColor="@color/white">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/projName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:elevation="5dp"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:padding="5dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="PROJECT NAME"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/ll1"
+                    android:layout_below="@+id/projName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/projName"
+                        android:layout_margin="10dp"
+                        android:padding="5dp"
+                        android:text="\u2022 Commencement Date "
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/dateOfStart"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccent"
+                        android:text="-- / -- /----"
+                        android:gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:padding="5dp"
+                        android:clickable="true"
+                        android:background="@drawable/button_holo_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_below="@+id/ll1"
+                    android:id="@+id/ll2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/projName"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="8dp"
+                        android:padding="5dp"
+                        android:text="\u2022 Accomplishment Date "
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/dateOfEnd"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccent"
+                        android:text="-- / -- /----"
+                        android:gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:clickable="true"
+                        android:layout_marginBottom="10dp"
+                        android:padding="5dp"
+                        android:background="@drawable/button_holo_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_below="@id/ll2"
+                    android:id="@+id/costPrompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cost of Project  is  \u20B9"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignBaseline="@+id/amount"
+                    android:layout_alignBottom="@+id/amount"
+                    android:layout_marginBottom="10dp"/>
+
+                <EditText
+                    android:layout_below="@id/ll2"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="0.00"
+                    android:id="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/costPrompt"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+
+                    android:padding="5dp"
+                    android:inputType="numberDecimal"
+                    android:imeOptions="actionDone"
+                    />
+
+                <CheckBox
+                    android:paddingTop="15dp"
+                    android:id="@+id/agreeChkBox"
+                    android:textStyle="italic"
+                    android:textSize="12sp"
+                    android:gravity="fill"
+                    android:textColor="@color/lighterGray"
+                    android:layout_margin="10dp"
+                    android:layout_below="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agreement"/>
+
+                <TextView
+                    android:id="@+id/finalHire"
+                    android:background="@drawable/button_solid_bg"
+                    android:layout_margin="10dp"
+                    android:text="HIRE AND START PROJECT"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:padding="10dp"
+                    android:layout_below="@+id/agreeChkBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </ScrollView>
+
+</RelativeLayout>

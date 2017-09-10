@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html ng-app="freelance">
+
+<head>
+    <title>API server</title>
+
+    <script type="text/javascript" src="/angular/angular.min.js"></script>
+
+    <script type="text/javascript" src="/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="/angular-sanitize/angular-sanitize.min.js"></script>
+
+    <script type="text/javascript" src="/angular-aria/angular-aria.min.js"></script>
+    <script type="text/javascript" src="/angular-material/angular-material.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/angular-material/angular-material.min.css">
+    <script type="text/javascript" src="/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="/angular-messages/angular-messages.min.js"></script>
+    <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/angular-modal-service/dst/angular-modal-service.min.js"></script>
+    <script type="text/javascript" src="/clickCopy/ngClickCopy.js"></script>
+    <script type="text/javascript" src="/filepicker-js/filepicker.js"></script>
+
+    <script type="text/javascript" src="/angular-youtube-mb/src/angular-youtube-embed.js"></script>
+
+
+    <script type="text/javascript" src="/angular-filepicker/dist/angular_filepicker.js"></script>
+    <script type="text/javascript" src="/angular-file-upload/dist/angular-file-upload.min.js"></script>
+
+    <script src="/markdown-it/dist/markdown-it.min.js"></script>
+    <script src="/angular-markdown-it/dist/ng-markdownit.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.7.0/angular-moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.js"></script>
+
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/apiCtrl.js"></script>
+    <script type="text/javascript" src="/js/saveModalCtrl.js"></script>
+    <script type="text/javascript" src="/js/editModalCtrl.js"></script>
+    <script type="text/javascript" src="/js/appCtrl.js"></script>
+    <script type="text/javascript" src="/js/modalCtrl/appEditCtrl.js"></script>
+    <script type="text/javascript" src="/js/modalCtrl/screenshot.js"></script>
+    <script type="text/javascript" src="/js/modalCtrl/categoryCtrl.js"></script>
+    <script type="text/javascript" src="/js/ctrl/homeCtrl.js"></script>
+    <script type="text/javascript" src="/js/ctrl/docCtrl.js"></script>
+
+
+    <script type="text/javascript" src="/js/ctrl/constCtrl.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="container-fluid" ng-controller="mainCtrl">
+        <!--<nav class="navbar navbar-inverse bg-primary">
+            <a class="navbar-brand" href="#">
+                <img src="https://raw.githubusercontent.com/IamAKX/Freelance/master/freelance-android/app/src/main/ic_launcher-web.png" width="40px" height="40px" alt="">
+                <span ui-sref="home" style="font-family:Copperplate, 'Copperplate Gothic Light', fantasy; font-size:20px">FreeLance</span>
+            </a>
+            <ul class="nav navbar-nav">
+                <li class="active" ui-sref="home"><a href="#">HOME</a></li>
+                <li ui-sref="doc"><a href="#">DOCS</a></li>
+                <li ui-sref="flowchart"><a href="#">FLOWCHART</a></li>
+                <li ui-sref="api"><a href="#">API</a></li>
+                <li ui-sref="category"><a href="#">CONSTANTS</a></li>
+                <li ui-sref="app"><a href="#">APP</a></li>
+
+            </ul>
+        </nav>-->
+
+        <nav class="navbar navbar-inverse navbar-fixed-top " style="background-color: #3949AB;" role="navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <span><img src="https://raw.githubusercontent.com/IamAKX/Freelance/master/freelance-android/app/src/main/ic_launcher-web.png" width="35px" height="35px" alt=""></span> <span ui-sref="home" style="font-family:Copperplate, 'Copperplate Gothic Light', fantasy; font-size:30px">FreeLance</span>
+
+                    </a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active" ui-sref="home"><a href="#">HOME</a></li>
+                        <li ui-sref="doc"><a href="#">DOCS</a></li>
+                        <li ui-sref="flowchart"> <a href="#">FLOWCHART</a></li>
+                        <li ui-sref="api" ng-show="currentUser"><a href="#">API</a></li>
+                        <li ui-sref="category" ng-show="currentUser"><a href="#">ADMIN</a></li>
+                        <li ui-sref="app"><a href="#">APP</a></li>
+                        <li ng-click="loginModal()" ng-show="!currentUser"><a href="#">LOGIN</a></li>
+                        <li ng-click="logout()" ng-show="currentUser"><a href="#">LOGOUT</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div ui-view layout-padding style="padding-top: 50px;"></div>
+    </div>
+    <!--<div layout="column" layout-fill>
+
+        <div layout="row">
+            <div flex="20">
+                <div id="sidebar-wrapper">
+                    <ul class="sidebar-nav">
+                        <span ui-sref="home"> <img src="https://raw.githubusercontent.com/IamAKX/Freelance/master/freelance-android/app/src/main/ic_launcher-web.png" width="60px" height="60px" alt=""> </span>
+                        <span ui-sref="home" style="font-family:Copperplate, 'Copperplate Gothic Light', fantasy; font-size:30px">FreeLance</span>
+                        <br>
+
+                        <br><br>
+                        <li><a ui-sref="home"><span>
+                                <md-icon  ng-bind="'account_balance'" style="fill:black"></md-icon> &nbsp&nbsp &nbsp&nbsp  </span> <span class="listMain">  HOME</span> 
+                    </a>
+                        </li>
+                        <li>
+                            <a ui-sref="doc"><span>
+                                <md-icon ng-bind="'library_books'" style="fill:black"></md-icon> &nbsp&nbsp &nbsp&nbsp </span> <span class="listMain">  DOCUMENTATION </span> 
+                    </a>
+                        </li>
+
+                        <li>
+                            <a ui-sref="flowchart"><span>
+                                <md-icon ng-bind="'swap_calls'" style="fill:black"></md-icon> &nbsp&nbsp &nbsp&nbsp </span> <span class="listMain">  WORKFLOW </span> 
+                     </a>
+                        </li>
+
+                        <li>
+                            <a ui-sref="api"><span>
+                                <md-icon ng-bind="'timeline'" style="fill:black"></md-icon> &nbsp&nbsp &nbsp&nbsp </span> <span class="listMain">  API</span> 
+                    </a>
+                        </li>
+                        <li>
+                            <a ui-sref="category"><span>
+                                <md-icon ng-bind="'assessment'" style="fill:black"></md-icon> &nbsp&nbsp &nbsp&nbsp </span> <span class="listMain"> CONSTANTS </span> 
+                    </a>
+                        </li>
+                        <li>
+                            <a ui-sref="app"><span>
+                                <md-icon ng-bind="'airplay'" style="fill:black"></md-icon> &nbsp&nbsp &nbsp&nbsp </span> <span class="listMain"> APP </span> 
+                    </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div flex>
+                <md-content>
+                    <div ui-view></div>
+                </md-content>
+
+            </div>
+
+        </div>
+    </div>-->
+
+</body>
+
+</html>

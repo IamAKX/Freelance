@@ -1,0 +1,117 @@
+<md-content layout-padding>
+    <!--<md-toolbar>
+        <div class="md-toolbar-tools">
+            API
+        </div>
+    </md-toolbar>-->
+    <div>
+
+        <h4>
+            Base Url : {{baseurlglobal}} &nbsp | &nbsp LAST UPDATED : {{updateDate|date : "MMM d, y h:mm:ss a"}} &nbsp| &nbsp
+            <!--<button class="btn btn-primary">ADD NEW</button> &nbsp | &nbsp-->
+            <md-button class="md-fab md-mini myColor" style="background-color: #455A64;" ng-click="saveApiModalOpen()">
+                <md-tooltip>ADD API</md-tooltip>
+                <md-icon ng-bind="'add'"></md-icon>
+            </md-button>
+            <md-button class="md-fab md-mini md-primary " style="background-color: #455A64;" ng-show="!view" ng-click="changeView()">
+                <md-tooltip>LIST VIEW</md-tooltip>
+                <md-icon ng-bind="'view_headline'"></md-icon>
+            </md-button>
+            <md-button class="md-fab md-mini md-primary " style="background-color: #455A64;" ng-show="view" ng-click="changeView()">
+                <md-tooltip>TAB VIEW</md-tooltip>
+                <md-icon ng-bind="'view_module'"></md-icon>
+            </md-button>
+
+            <!--<button ng-show="!view" class="btn btn-info" ng-click="changeView()"> List View </button>
+            <button ng-show="view" class="btn btn-success" ng-click="changeView()"> Tabular View </button>-->
+        </h4>
+
+        <hr>
+        <div class="form-group">
+            <input type="text" class="form-control" id="usr" placeholder="search" ng-model="searchquery">
+        </div>
+        <div class="row">
+            <div ng-show="!view" class="panel panel-primary col-md-3 box box-content" ng-repeat="api in apis |filter:searchquery" style="padding: 5">
+                <div class="panel-heading">
+                    <div class="pull-right">
+                        <span class="glyphicon glyphicon-trash" ng-click="delete(api,$index)"></span>
+                        <span class="glyphicon glyphicon-pencil" ng-click="editApiModalOpen(api)"></span>
+                    </div>
+                    {{api.name}}
+                    <div> Category : {{api.category}} </div>
+                </div>
+                <div class="panel-body">
+                    <div class="pull-right">
+                        <legend style="background-color:#efff99">{{api.type}}</legend>
+                    </div>
+                    <h5> API : <strong>{{api.api}}</strong></h5>
+                    <h5> HEADER : {{api.header}}</h5>
+                    <h5> REQUEST BODY : {{api.reqBody}}</h5>
+                    <h5> RESPONSE BODY : {{api.resBody}}</h5>
+                    <h5> DESCRIPTION : {{api.description}}</h5>
+                </div>
+            </div>
+
+            <table class="table-striped" ng-show="view">
+                <thead>
+                    <th class="col-md-2" style="text-align:center">
+                        <h4>Name
+                            <span class=" btn glyphicon glyphicon-sort" ng-click="sort('name')"></span>
+                        </h4>
+                    </th>
+                    <th class="col-md-2" style="text-align:center">
+                        <h4>Categrory
+                            <span class=" btn glyphicon glyphicon-sort" ng-click="sort('category')"></span>
+                        </h4>
+                    </th>
+                    <th class="col-md-2" style="text-align:center">
+                        <h4>Api
+                            <span class=" btn glyphicon glyphicon-sort" ng-click="sort('api')"></span>
+                        </h4>
+                    </th>
+                    <th class="col-md-1" style="text-align:center">
+                        <h4>Type
+                            <span class=" btn glyphicon glyphicon-sort" ng-click="sort('type')"></span>
+                        </h4>
+                    </th>
+                    <th class="col-md-2" style="text-align:center">
+                        <h4>updateDate
+                            <span class=" btn glyphicon glyphicon-sort" ng-click="sort('_id')"></span>
+                        </h4>
+                    </th>
+                    <th class="col-md-1" style="text-align:center">
+                        <h4>Edit/Delete</h4>
+                    </th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="api in apis |filter:searchquery |orderBy:orderVal:reverse">
+                        <td style="text-align:center"> {{api.name}} </td>
+                        <td style="text-align:center"> {{api.category}} </td>
+                        <td style="text-align:center"> {{api.api}} </td>
+                        <td style="text-align:center"> {{api.type}} </td>
+                        <td style="text-align:center"> <span am-time-ago="api._id"></span></td>
+                        <td style="text-align:center">
+                            {{getTime(api._id)}}
+                            <md-button class="md-fab md-mini md-primary " style="background-color: #455A64;" ng-click="delete(api,$index)">
+                                <md-tooltip>DELETE</md-tooltip>
+                                <md-icon ng-bind="'delete'"></md-icon>
+                            </md-button>
+                            <md-button class="md-fab md-mini md-primary " style="background-color: #455A64;" ng-click="editApiModalOpen(api)">
+                                <md-tooltip>EDIT API</md-tooltip>
+                                <md-icon ng-bind="'create'"></md-icon>
+                            </md-button>
+
+                        </td>
+                        <br>
+                        <hr>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div ng-if="apis.length == 0 ">
+            NO ENTRY
+        </div>
+    </div>
+</md-content>

@@ -1,0 +1,70 @@
+<md-content flex="100">
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+            ADD API
+        </div>
+        <span flex></span>
+        <md-icon ng-bind="'clear'" ng-click="close()"></md-icon>
+    </md-toolbar>
+    <md-content layout-padding>
+
+        <md-content layout-gt-sm="row" style="min-width:600px; " layout-padding>
+
+            <md-input-container flex="70">
+                <label>NAME</label>
+                <input ng-model="api.name">
+            </md-input-container>
+
+            <md-input-container flex="30">
+                <label>CATEGORY</label>
+                <input ng-model="api.category">
+            </md-input-container>
+
+        </md-content>
+
+        <md-content layout-gt-sm="row" layout-padding>
+
+            <md-input-container flex="100">
+                <label>API</label>
+                <input ng-model="api.api">
+            </md-input-container>
+        </md-content>
+
+        <md-content layout-gt-sm="row" layout-padding>
+
+            <md-input-container flex="50">
+                <label>HEADER</label>
+                <input ng-model="api.header">
+            </md-input-container>
+            <md-input-container flex="50">
+                <label>TYPE</label>
+                <input ng-model="api.type">
+            </md-input-container>
+        </md-content>
+        <md-content layout-gt-sm="row" layout-padding>
+
+            <md-input-container flex="50">
+                <label>REQUEST BODY</label>
+                <input ng-model="api.reqBody">
+            </md-input-container>
+
+            <md-input-container flex="50">
+                <label>RESPONSE BODY</label>
+                <input ng-model="api.resBody">
+            </md-input-container>
+
+        </md-content>
+        <md-content layout-gt-sm="row" layout-padding>
+
+            <md-input-container flex="100">
+                <label>DESCRIPTION</label>
+                <input ng-model="api.description">
+            </md-input-container>
+        </md-content>
+        <div layout="row">
+            <span flex></span>
+            <md-button class="md-primary md-raised" ng-click="editNew(api)">ADD</md-button>
+            <md-button class="md-primary md-raised" ng-click="close()">CLOSE</md-button>
+        </div>
+    </md-content>
+</md-content>

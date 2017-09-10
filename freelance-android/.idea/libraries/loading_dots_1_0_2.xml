@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="loading-dots-1.0.2">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/940ec429045105b2deed42070af1b26e699deae9/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/940ec429045105b2deed42070af1b26e699deae9/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.eyalbira.loadingdots/loading-dots/1.0.2/dbb83fb24096bc3fa2a3af4386428c7fcb0564e3/loading-dots-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tvNotFound"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:padding="10dp"
+        android:textColor="@color/colorAccent"
+        android:text="You are not involved in any project currently. Selecting different category might help you in fetching projects."/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:textStyle="bold|italic"
+        android:background="@color/colorAccent"
+        android:text="This project is ongoing and will end in"
+        android:id="@+id/textView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/month"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:text="0\nmonth"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/day"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:text="00\nday"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/hour"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:text="00\nhour"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/minute"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:text="00\nminute"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/second"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:text="00\nsec"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/empImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/userdp"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/empName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Akash Giri posted on 15 May, 2017"
+        android:layout_alignTop="@+id/empImg"
+        android:layout_toRightOf="@+id/empImg"
+        android:layout_toEndOf="@+id/empImg"
+        android:layout_marginLeft="11dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginStart="11dp" />
+
+    <TextView
+        android:id="@+id/deadline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:textStyle="italic"
+        android:textSize="15sp"
+        android:text="Deadline for this project is midnight of \n25 June, 2017"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/empImg"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignLeft="@+id/empName"
+        android:layout_alignStart="@+id/empName" />
+
+    <TextView
+        android:layout_width="70dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="DETAILS"
+        android:clickable="true"
+        android:id="@+id/details"
+        android:textColor="@color/colorAccent"
+        android:background="@drawable/button_holo_bg"
+        android:padding="5dp"
+        android:layout_below="@+id/deadline"
+        android:layout_toRightOf="@+id/empImg"
+        android:layout_toEndOf="@+id/empImg"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:layout_width="70dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="CHAT"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/chat"
+        android:textColor="@color/colorAccent"
+        android:background="@drawable/button_holo_bg"
+        android:padding="5dp"
+        android:layout_alignBaseline="@+id/details"
+        android:layout_alignBottom="@+id/details"
+        android:layout_toRightOf="@+id/details"
+        android:layout_toEndOf="@+id/details" />
+
+    <TextView
+        android:layout_width="70dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="CALL"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/call"
+        android:textColor="@color/colorAccent"
+        android:background="@drawable/button_holo_bg"
+        android:padding="5dp"
+        android:layout_alignBaseline="@+id/chat"
+        android:layout_alignBottom="@+id/chat"
+        android:layout_toRightOf="@+id/chat"
+        android:layout_toEndOf="@+id/chat" />
+
+    <TextView
+        android:layout_width="70dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="CLOSE"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/end_project"
+        android:textColor="@color/white"
+        android:background="@drawable/button_solid_bg"
+        android:padding="5dp"
+        android:layout_alignBaseline="@+id/call"
+        android:layout_alignBottom="@+id/call"
+        android:layout_toRightOf="@+id/call"
+        android:layout_toEndOf="@+id/call" />
+
+</RelativeLayout>

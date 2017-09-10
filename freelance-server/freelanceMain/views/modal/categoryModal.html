@@ -1,0 +1,39 @@
+<md-content>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            ADD CATEGORY
+        </div>
+    </md-toolbar>
+    <md-content layout-padding style="min-width:600px" ; layout="row">
+
+        <div layout="column" flex="60">
+            <md-input-container flex="50">
+                <label>NAME</label>
+                <input ng-model="catData.name">
+            </md-input-container>
+            <md-input-container flex="80">
+                <label>LINK</label>
+                <input ng-model="catData.url">
+            </md-input-container>
+            <md-input-container layout="row">
+                <span flex></span>
+                <md-button ng-click="saveCat()" class="md-primary md-raised">
+                    SAVE
+                </md-button>
+                <md-button ng-click="close()" class="md-primary md-raised">
+                    CLOSE
+                </md-button>
+            </md-input-container>
+        </div>
+        <md-divider vertical></md-divider>
+
+        <md-content layout-align="center center" layout="column">
+            <h4><b>PREVIEW</b></h4>
+            <img src="{{catData.url}} " alt=" " height="150px" width="200px" flex="100"> {{catData.name}}
+        </md-content>
+
+    </md-content>
+    <md-content layout="row" layout-padding>
+
+    </md-content>
+</md-content>

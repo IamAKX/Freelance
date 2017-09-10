@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="2dp"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/catIcon"
+            android:layout_marginRight="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/info"/>
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_alignParentLeft="true"
+                    android:textStyle="bold"
+                    android:id="@+id/allProjectpname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:singleLine="true"
+                    android:layout_alignStart="@+id/allProjectstatus"
+                    android:maxLines="1"
+                    android:textColor="@color/colorAccent"
+                    android:layout_alignLeft="@+id/allProjectstatus"
+                    android:layout_toLeftOf="@+id/allProjectstatus"
+                    android:layout_toStartOf="@+id/allProjectstatus" />
+                <TextView
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/allProjectstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="status"
+                    />
+            </RelativeLayout>
+
+
+            <!--<TextView-->
+
+                <!--android:id="@+id/allProjectpdesc"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textSize="14sp"-->
+                <!--android:maxLines="1"/>-->
+
+            <TextView
+                android:id="@+id/allProjectdeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deadline : 25 April,2017" />
+
+            <HorizontalScrollView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/participantsImageList"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

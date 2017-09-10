@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:visibility="gone"
+    android:id="@+id/mainLayout"
+    tools:context="com.akash.applications.freelance.ViewProject">
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:id="@+id/ProjectName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PROJECT NAME"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_below="@id/ProjectName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ProjectCategory"
+        android:text="Category"
+        android:gravity="center_horizontal"
+        android:textStyle="italic"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="15dp"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="5dp"
+        android:layout_marginBottom="25dp"
+        android:id="@+id/cardProjectdesc"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/ProjectCategory"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="2dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:weightSum="5"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_weight="2"
+                android:id="@+id/desc"
+                android:text="Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc Desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/divider_color"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="1dp"/>
+
+            <LinearLayout
+                android:padding="5dp"
+                android:layout_weight="3"
+                android:weightSum="2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="5-7 hours"/>
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/deadline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="12 May 2017"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/empCard"
+        android:layout_below = "@+id/cardProjectdesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="2dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/empImg"
+                android:layout_marginRight="10dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+                    <TextView
+                        android:layout_weight="4"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/empName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="21sp"
+                        android:textStyle="bold"
+                        android:text="Akash Giri"/>
+
+                    <ImageView
+                        android:layout_weight="1"
+                        android:id="@+id/viewDetails"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/info"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/postedOn"
+                    android:background="@color/white"
+                    android:text="Posted on 11 May, 17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                />
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/callEmp"
+                        android:layout_width="80dp"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_holo_bg"
+                        android:layout_marginRight="10dp"
+                        android:text="CALL"/>
+
+                    <TextView
+                        android:id="@+id/msgEmp"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/button_holo_bg"
+                        android:text="CHAT"
+                        android:gravity="center_horizontal"
+                        android:paddingTop="3dp"
+                        android:paddingBottom="3dp"/>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/empCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/shadowColor"
+        android:textStyle="italic"
+
+        android:text="You can chat or call with the Employer only after accepting this Project. Please take care that you don't quit the project after accepting. If such activity is noted frequently, you may be teporarily or permanently banned from FREELANCE."/>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:weightSum="2"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/correct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:padding="5dp"
+            android:text="ACCEPT"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/button_holo_bg"/>
+
+        <TextView
+            android:id="@+id/wrong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:elevation="5dp"
+            android:padding="5dp"
+            android:text="REJECT"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/button_holo_bg"/>
+    </LinearLayout>
+
+</RelativeLayout>

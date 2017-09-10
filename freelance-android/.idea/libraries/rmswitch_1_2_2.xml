@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="rmswitch-1.2.2">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/73a13d43fede435182ed617ce8c2ec8de6d2c53c/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/73a13d43fede435182ed617ce8c2ec8de6d2c53c/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.rm/rmswitch/1.2.2/8b188f869676924f856ee09a173a177bb41a0dc1/rmswitch-1.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

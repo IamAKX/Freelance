@@ -1,0 +1,603 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $("document").ready(function() {
+            //Login Panel:
+            $('#lg1').click(function() {
+                $('#img1').attr('src', 'img/login_login.png');
+            });
+            $('#lg2').click(function() {
+                $('#img1').attr('src', 'img/login_pw.png');
+            });
+            $('#lg3').click(function() {
+                $('#img1').attr('src', 'img/login_verify.png');
+            });
+            $('#lg-body').click(function() {
+                $('#img1').attr('src', 'img/login.png');
+            });
+
+            //Category-selection Panel:
+            $('#cs1').click(function() {
+                $('#img2').attr('src', 'img/cat_sel_serach.jpeg');
+            });
+            $('#cs2').click(function() {
+                $('#img2').attr('src', 'img/cat_sel2.png');
+            });
+            $('#cs3').click(function() {
+                $('#img2').attr('src', 'img/cat_sel_done.png');
+            });
+            $('#cat_sel-body').click(function() {
+                $('#img2').attr('src', 'img/cat_sel1.png');
+            });
+
+            //HOME Panel:
+            $('#home1').click(function() {
+                $('#img3').attr('src', 'img/home_fl_profile.png');
+            });
+            $('#home2').click(function() {
+                $('#img3').attr('src', 'img/home_post_project_btn.png');
+            });
+
+            $('#home3').click(function() {
+                $('#img3').attr('src', 'img/hire_menu.png');
+            });
+            $('#fl_profile').hover(function() {
+                $('#img3').attr('src', 'img/fl_profile.png');
+            });
+            $("#hire_btn").css("color", "blue");
+            $('#hire_btn').hover(function() {
+                $('#img3').attr('src', 'img/home_hire_btn.png');
+            });
+            $('#home-body').click(function() {
+                $('#img3').attr('src', 'img/home.png');
+            });
+
+            //Project-Details(1) Panel:
+            $('#pd1_1').click(function() {
+                $('#img4').attr('src', 'img/project_details(1)_panel1.png');
+            });
+            $('#pd1_2').click(function() {
+                $('#img4').attr('src', 'img/project_details(1)_panel2.png');
+            });
+            $('#pd1_3').click(function() {
+                $('#img4').attr('src', 'img/project_details(1)_panel3.png');
+            });
+            $('#pd1_4').click(function() {
+                $('#img4').attr('src', 'img/project_details(1)_post.png');
+            });
+            $('#pd1_post').hover(function() {
+                $('#img4').attr('src', 'img/project_post(1).png');
+            });
+            $('#pd1_5').click(function() {
+                $('#img4').attr('src', 'img/project_details(1).png');
+            });
+            $('#pd1-body').click(function() {
+                $('#img4').attr('src', 'img/project_details(1).png');
+            });
+
+            //Project-Details(2) Panel:
+            $('#pd2_1').click(function() {
+                $('#img5').attr('src', 'img/project_details(2)_panel1.png');
+            });
+            $('#pd2_2').click(function() {
+                $('#img5').attr('src', 'img/project_details(2)_panel2.png');
+            });
+            $('#pd2_3').click(function() {
+                $('#img5').attr('src', 'img/project_details(2)_panel3.png');
+            });
+            $('#pd2_4').click(function() {
+                $('#img5').attr('src', 'img/project_details(2)_panel4.png');
+            });
+            $('#pd2-body').click(function() {
+                $('#img5').attr('src', 'img/project_details(2).png');
+            });
+
+            //Post-Project Panel:
+            $('#pp1').click(function() {
+                $('#img6').attr('src', 'img/post_project.png');
+            });
+            $('#pp2').click(function() {
+                $('#img6').attr('src', 'img/post_btn.png');
+            });
+
+            $('#timer').hover(function() {
+                $('#img6').attr('src', 'img/timer.png');
+            });
+            $("#hire_btn").css("color", "blue");
+            $('#hire_btn').hover(function() {
+                $('#img3').attr('src', 'img/home_hire_btn.png');
+            });
+            $('#pp-body').click(function() {
+                $('#img6').attr('src', 'img/post_project.png');
+            });
+
+            //Menu Panel:
+            $('#menu1').click(function() {
+                $('#img7').attr('src', 'img/hire_menu1.png');
+            });
+            $('#menu2').click(function() {
+                $('#img7').attr('src', 'img/hire_menu2.png');
+            });
+
+
+            $('#menu-body').click(function() {
+                $('#img7').attr('src', 'img/hire_menu.png');
+            });
+
+
+
+
+        });
+    </script>
+
+
+</head>
+
+
+<div>
+    <h1 class="jumbotron">FreeLancer</h1>
+    <hr>
+
+    <div class="container-fluid jumbotron">
+
+        <Div class="page-hearder well">
+            <h2>Hire Mode</h2>
+            <small>Freelancer is the worlds largest freelancing and crowdsourcing marketplace by number of users and projects. We connect over 23,578,203 employers and freelancers globally from over 247 countries, regions and territories. Through our marketplace, employers can hire freelancers to do work in areas such as software development, writing, data entry and design right through to engineering, the sciences, sales and marketing, accounting and legal services.</small></Div>
+
+
+        <div class="panel panel-primary">
+
+            <div id="lg-body" class="panel-heading"><b>1. </b>login page</div>
+            <div class="panl-body">
+                <div class="row ">
+                    <div class="col-xs-6 col-md-3">
+                        <a href="#" class="thumbnail">
+                            <img id="img1" src="img/login.png" alt="...">
+                        </a>
+                    </div>
+                    <div class="container-fluid ">
+                        <div class="col-xs-6 col-md-9">
+
+
+                            <h4>
+                                <i>This is First page the user encounters once he has completed the Registration process successfully.
+                        The current page is divided into three panels, namely:</br></br>
+
+
+
+                            <div id="lg1" class=" well" data-toggle="collapse" data-target="#login_panel">
+                              1. The login Panel
+                              <p id="login_panel" class="collapse">
+                                The Login Panel Contains two input fields:<br/>
+                                1.  The Email Id Box<br/>
+                                2. The Password Field<br/>
+                                3. The login Button<br/>
+                                The user fill in his id and password and
+                                once he clicks the login button, the entered credentials are verified in the database:
+                                <img src="flowchart/login_flowchart.png" alt="flowchart" /></br>
+                                Once the credentials are verified the page re directs to the <a href="#cat_sel-body" >Category Selection Page</a>
+                                If the user is logging in for the first time.
+                                Else the page redirects to the <a href="#home-body">Home page of the app</a>.
+
+                              </p>
+
+                            </div>
+                            <div id="lg2" class=" well" data-toggle="collapse" data-target="#forget_pw">
+                              2. The Forget Password panel
+                              <p id="forget_pw" class="collapse">
+
+                              </p>
+                            </div>
+                            <div id="lg3" class="well" data-toggle="collapse" data-target="#verify_ac">
+                              3. The Verify Account panel
+                              <p id="verify_ac" class="collapse">
+
+                              </p>
+                            </div>
+
+                              </div>
+                  </i>
+                            </h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="panel panel-primary">
+
+                <div id="cat_sel-body" class="panel-heading"><b>2. </b>category-selection page</div>
+                <div class="panl-body">
+                    <div class="row ">
+                        <div class="col-xs-6 col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img id="img2" src="img/cat_sel1.png" alt="...">
+                            </a>
+                        </div>
+                        <div class="container-fluid ">
+                            <div class="col-xs-6 col-md-9">
+
+
+                                <h4>
+                                    <i>This Category Selection Page has a one time occurance which only appears for the first login.
+                    This page is very important for a smooth and hassel free user experience as this gives app an idea of </br>
+                      about the need of the user for which he will use the app.
+                      This significantly improves performance as the next page(<a href="#home-body">Home Page</a>)will suggest freelancers based upon this prior selction.</br>
+                      The Category Selection Page contains two distinctive pannels, namely:</br></br>
+
+
+
+
+                          <div id="cs1" class=" well" data-toggle="collapse" data-target="#search_panel">
+                            1. The Search Panel
+                            <p id="search_panel" class="collapse">
+                              The Search Panel allows the user to look for a particular category of he might want freelancers for.
+                              <span id="">This field is linked with the Database and as the user types something, the app automatically suggests some of the categories.</span>
+                              <br/>
+                              The general working of the sarch bar is shown in the following flowchart:</br>
+
+                              <img src="flowchart/cat_search_flowchart.png" alt="flowchart" /></br>
+                              Once the user finds the desired category , he can select it by simply taping to the category name.
+                              This will add the category in the <i>Selected Category Panel</i>
+                                    </p>
+
+                            </div>
+                            <div id="cs2" class=" well" data-toggle="collapse" data-target="#selected_cat">
+                                2. The Selected Category panel
+                                <p id="selected_cat" class="collapse">
+                                    This Panel aquires 90% of the screen space. The purpose of this panel is to display all the categories the user have selected. This is done by making a tab for each of the selected category. The category tab also have a dismiss button, which when clicked,
+                                    that particular category is deleted from the users personal category database.
+
+                                </p>
+                            </div>
+                            <div id="cs3" class="well" data-toggle="collapse" data-target="#cs_done_btn">
+                                3. The Done Button
+                                <p id="cs_done_btn" class="collapse">
+                                    Once the user is satisfied with the categories he will proceed by cliclking the <b>DONE</b> button on the top right corner of the page. This will redirect the user to the<a href="#home-body">HOME Page of the App</a>.
+                                </p>
+                            </div>
+
+
+
+                        </div>
+
+                        </i>
+                        </h4>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="panel panel-primary">
+
+            <div id="home-body" class="panel-heading"><b>3. </b>HOME page</div>
+            <div class="panel-body">
+                <div class="row ">
+                    <div class="col-xs-6 col-md-3">
+                        <a href="#" class="thumbnail">
+                            <img id="img3" src="img/home.png" alt="...">
+                        </a>
+                    </div>
+                    <div class="container-fluid ">
+                        <div class="col-xs-6 col-md-9">
+
+
+                            <h4>
+                                <i>The home page of the App or the index page of App contains various fields and panels.
+                      This page gives user access to all the features in App.
+                      These panels and fiel:</br>
+                    </br>
+
+
+
+                              <div id="home1" class=" well" data-toggle="collapse" data-target="#fl_panel">
+                                1. The Freelancer Profile
+                                <p id="fl_panel" class="collapse">
+                                  This panel shows a the list of freelancers (i.e users in Work mode of th App),
+                                  through mini profile windows.
+                                  These profile windows contains:<br/>
+                                  1. The Name of the Freelancer<br/>
+                                  2. Ratings of the freelancer<br/>
+                                  3. The category he works in.<br/>
+                                  4. A <span id="hire_btn">hire</span> button to directly hire the Freelenacer</br>
+                                  In this freelancer profile panel the most important section is the HIRE button.
+                                  This button lets the user to Directly hire that particular freelancer from the
+                                  <a href="#pd-body">project-details</a> page.
+                                  The user can also view the complete profile of the freelancer by clicking his <a id="fl_profile">name</a>.
+
+
+                                </p>
+
+                              </div>
+                              <div id="home2" class=" well" data-toggle="collapse" data-target="#post_project">
+                                2. The Post Project Shortcut Button
+                                <p id="post_project" class="collapse">
+                                  The key feature of the Freelancer Application is to post project(work) to the various freelancers connected with the app.
+                                  We have provided a Shortcut button at the bottom right corner of the screen for this task.
+                                  This post-project button re-directs the user to the
+                                  <a href="#pd-body">project-details</a> page in the app, from where, after entering the project details, user can
+                                  contact various freelancers.
+                                </p>
+                              </div>
+                              <div id="home3" class="well" data-toggle="collapse" data-target="#home_menu">
+                                3. The Menu panel
+                                <p id="home_menu" class="collapse">
+                                  The Menu panel can be opened by tapping the icon on the top-left corner.
+
+                                </p>
+                              </div>
+
+                                </div>
+                    </i>
+                            </h4>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+
+                <div id="pd1-body" class="panel-heading"><b>4. </b>Project-Details(1): Hire Directly</div>
+                <div class="panel-body">
+                    <div class="row ">
+                        <div class="col-xs-6 col-md-3">
+                            <a href="#" class="thumbnail">
+                                <img id="img4" src="img/project_details(1).png" alt="...">
+                            </a>
+                        </div>
+                        <div class="container-fluid ">
+                            <div class="col-xs-6 col-md-9">
+
+
+                                <h4>
+                                    <i>In This page the user is asked to fill the project details, or the details of the specific task he needs a freelancer for.
+                       The form in this page is constructed to ask only the minimal and yet the most necessary information that a freelancer would need before accepting the job.</br>
+                       These information gathering fields are divided into three sections, namely:</br>
+
+                              <div id="pd1_1" class=" well" data-toggle="collapse" data-target="#project_info1">
+                                 1. The Project Information
+                                 <p id="project_info1" class="collapse">
+                                  This Field deals with the general details of the project, namely:</br>
+
+                                   1. A short Name for the Project.<br/>
+                                   2. A Brief Description of the project.<br/>
+                                   3. The category of the project.<br/>
+                                   4. A hire button to directly hire the Freelenacer</br>
+
+                                 </p>
+
+                               </div>
+                               <div id="pd1_2" class=" well" data-toggle="collapse" data-target="#work_duration1">
+                                 2. Duration of work
+                                 <p id="work_duration1" class="collapse">
+                                   This field division consists two input fields:
+                                   1.Start</addressbr>
+                                   2.End</br>
+                                   And a dropdown bar for slection between Hours, Minutes,Days.
+                                   This form requires the user to give a rough estimation of the time this particular project would consume.
+                                 </p>
+                               </div>
+                               <div id="pd1_3" class="well" data-toggle="collapse" data-target="#work_deadline1">
+                                 3. Deadline of Work
+                                 <p id="work_deadline1" class="collapse">
+                                   This panel asks the user to provide a deadline for the project,
+                                   i.e, a date by which he requires the project to be complete.
+
+                                 </p>
+                               </div>
+
+                               <div id="pd1_4" class="well" data-toggle="collapse" data-target="#pd1_post_btn">
+                                 4. Post Button
+                                 <p id="pd1_post_btn" class="collapse">
+                                   The post button at the top right corner of the screen posts the project to the selected freelancer, in this case,
+                                   <a id="pd1_post">'Abdullah'</a>.
+
+                                 </p>
+                               </div>
+
+                               <div id="pd1_5" class="well" data-toggle="collapse" data-target="#pd1_flowchart">
+                                 5. Flowchart
+                                 <p id="pd1_flowchart" class="collapse">
+                                 </br>
+                                   <img src="flowchart/pd1_flowchart.png" />
+
+                                 </p>
+                               </div>
+
+
+                                 </div>
+                     </i>
+                                </h4>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="panel panel-primary">
+
+                    <div id="pd2-body" class="panel-heading"><b>5. </b>Project-Details(2): Custom Choose Freelancers </div>
+                    <div class="panel-body">
+                        <div class="row ">
+                            <div class="col-xs-6 col-md-3">
+                                <a href="#" class="thumbnail">
+                                    <img id="img5" src="img/project_details(2).png" alt="...">
+                                </a>
+                            </div>
+                            <div class="container-fluid ">
+                                <div class="col-xs-6 col-md-9">
+
+
+                                    <h4>
+                                        <i>In This page the user is asked to fill the project details, or the details of the specific task he needs a freelancer for.
+                      The form in this page is constructed to ask only the minimal and yet the most necessary information that a freelancer would need before accepting the job.</br>
+                      These information gathering fields are divided into three sections, namely:</br></br>
+
+                             <div id="pd2_1" class=" well" data-toggle="collapse" data-target="#project_info2">
+                                1. The Project Information
+                                <p id="project_info2" class="collapse">
+                                 This Field deals with the general details of the project, namely:</br>
+
+                                  1. A short Name for the Project.<br/>
+                                  2. A Brief Description of the project.<br/>
+                                  3. The category of the project.<br/>
+                                  4. A hire button to directly hire the Freelenacer</br>
+
+                                </p>
+
+                              </div>
+                              <div id="pd2_2" class=" well" data-toggle="collapse" data-target="#work_duration2">
+                                2. Duration of work
+                                <p id="work_duration2" class="collapse">
+                                  This field division consists two input fields:
+                                  1.Start</addressbr>
+                                  2.End</br>
+                                  And a dropdown bar for slection between Hours, Minutes,Days.
+                                  This form requires the user to give a rough estimation of the time this particular project would consume.
+                                </p>
+                              </div>
+                              <div id="pd2_3" class="well" data-toggle="collapse" data-target="#work_deadline2">
+                                3. Deadline of Work
+                                <p id="work_deadline2" class="collapse">
+                                  This panel asks the user to provide a deadline for the project,
+                                  i.e, a date by which he requires the project to be complete.
+
+                                </p>
+                              </div>
+
+                              <div id="pd2_4" class="well" data-toggle="collapse" data-target="#pd2_next_btn">
+                                4. Next Button
+                                <p id="pd2_next_btn" class="collapse">
+                                  The Next button acts like form submit button.
+                                  When the user clicks the NEXT button, he gets redirected to the <a href="#" >Post-Project</a> Page.
+                                </p>
+                              </div>
+
+
+                                </div>
+                    </i>
+                                    </h4>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel panel-primary">
+
+                        <div id="pp-body" class="panel-heading"><b>6. </b>Project-Post </div>
+                        <div class="panel-body">
+                            <div class="row ">
+                                <div class="col-xs-6 col-md-3">
+                                    <a href="#" class="thumbnail">
+                                        <img id="img6" src="img/post_project.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="container-fluid ">
+                                    <div class="col-xs-6 col-md-9">
+
+
+                                        <h4>
+                                            <i>This pannel appears after the user clicks the next button from the <a>Project-post panel</a></br>
+                      The panel shows a list of freelancers with a checkbox for each one of them.
+                      The user can custom select multiple freelancers according to his choice.</br></br>
+
+                            <div id="pp1" class=" well" data-toggle="collapse" data-target="#fl_custom_sel">
+                               1. Freelancer Selection
+                               <p id="fl_custom_sel" class="collapse">
+                                User can select all the freelancers by clicking the checkbox beside the project-post button,
+                                or as mentioned earlier can custom select by clicking the checkbox bewside every freelancer.</br>
+
+
+
+                               </p>
+
+                             </div>
+                             <div id="pp2" class=" well" data-toggle="collapse" data-target="#post_btn">
+                               2. Post Button
+                               <p id="post_btn" class="collapse">
+                                 Once the user have selected the desired freelancer he can post the project to the selected freelancers by clicking the Post Button.
+                                 This button pops a <a id="timer">timer</a> on the screen.
+                               </p>
+
+
+                               </div>
+                   </i>
+                                        </h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel panel-primary">
+
+                        <div id="menu-body" class="panel-heading"><b>7. </b>Menu </div>
+                        <div class="panel-body">
+                            <div class="row ">
+                                <div class="col-xs-6 col-md-3">
+                                    <a href="#" class="thumbnail">
+                                        <img id="img7" src="img/hire_menu.png" alt="...">
+                                    </a>
+                                </div>
+                                <div class="container-fluid ">
+                                    <div class="col-xs-6 col-md-9">
+
+
+                                        <h4>
+                                            <i>The Menu Panel provides user an access to all the App miscellaneous features of the App.
+                    These features are also divided into two sections in the menu panel itself.</br></br>
+
+                            <div id="menu1" class=" well" data-toggle="collapse" data-target="#menu_panel1">
+                               1. Menu Panel 1
+                               <p id="menu_panel1" class="collapse">
+
+                               </p>
+
+                             </div>
+                             <div id="menu2" class=" well" data-toggle="collapse" data-target="#menu_panel2">
+                               2. Menu Panel 2
+                               <p id="menu_panel2" class="collapse">
+
+                               </p>
+                             </div>
+
+
+
+                               </div>
+                   </i>
+                                        </h4>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>

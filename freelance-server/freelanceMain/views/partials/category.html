@@ -1,0 +1,306 @@
+<md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="USER">
+
+            <md-content>
+
+                <md-container layout-padding layout="row">
+                    <md-list flex="selectedUserId != null ? 50 : 100">
+                        <md-subheader class="md-no-sticky">USERS </md-subheader>
+
+                        <md-input-container class="md-block" flex-gt-xs>
+                            <md-icon ng-bind="'search'"></md-icon>
+                            <label>Search</label>
+                            <input ng-model="userFilter">
+                        </md-input-container>
+                        <md-list-item class="md-2-line" ng-repeat="user in users|filter:userFilter" ng-click="selectUser(user._id)">
+                            <md-divider></md-divider>
+                            <img ng-src="/images/{{user.image}}" class="md-avatar" alt="alt" />
+                            <div class="md-list-item-text" layout="column">
+                                <h4>{{ user.name }}</h4>
+                                <h4>{{ user.userName }}</h4>
+                                <h4>{{ user.phone }}</h4>
+
+                            </div>
+                            <span flex></span>
+                            <div layout="column">
+                                <div>
+                                    Active :
+                                    <md-icon ng-bind="'done'" ng-show="user.active">
+                                    </md-icon>
+                                    <md-icon ng-bind="'clear'" ng-show="!user.active">
+                                    </md-icon>
+                                </div>
+
+                                <md-icon ng-bind="'card_membership'" ng-show="user.certified">
+                                    <md-tooltip>Freelance Certified</md-tooltip>
+                                </md-icon>
+                            </div>
+
+                        </md-list-item>
+                    </md-list>
+                    <md-content flex="50" layout="column" ng-show="selectedUserId != null">
+                        <div>
+                            <md-content layout="row">
+                                <md-subheader class=" md-no-sticky ">
+                                    <img ng-src="/images/{{userData.image}}" class="img-circle" ng-alt="blank" width="60px" height="60px" /><span layout-padding style="font-size:30px">{{userData.name}}</span>
+                                </md-subheader>
+                                <span flex></span>
+                                <md-button class="md-fab md-mini " style="background-color: #455A64;" ng-click="deleteUser()">
+                                    <md-tooltip>DELETE ACCOUNT OF {{userData.name}}</md-tooltip>
+                                    <md-icon ng-bind="'delete'"></md-icon>
+                                </md-button>
+                            </md-content>
+
+                            <md-divider></md-divider>
+                            <br>
+                            <div layout="row" layout-margin>
+                                <h5><b>CONTROLS:</b> &nbsp</h5>
+                                <span>
+                                         <md-switch ng-model="userData.active" md-no-ink="true" class="md-primary" fill="#455A64;"   ng-change="toggleData('active')" aria-label="Switch 1">
+                                            ACTIVE: {{ userData.active}}
+                                        </md-switch>
+                                </span>
+                                <span>
+                                        <md-switch ng-model="userData.certified"  md-no-ink="true" class="md-primary" ng-change="toggleData('certified')" aria-label="Switch 1">
+                                            CERTIFIED: {{ userData.certified}}
+                                        </md-switch>
+                                </span>
+                                <span>
+                                        <md-switch ng-model="userData.suspend"  md-no-ink="true" class="md-primary" ng-change="toggleData('suspend')" aria-label="Switch 1">
+                                            SUSPEND: {{ userData.suspend}}
+                                        </md-switch>
+                                </span>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" layout-padding>
+                                <h5><b>CATEGORIES</b> : &nbsp</h5>
+                                <span ng-repeat="c in userCategory " style="padding-right: 5px ">
+                                        <a href="">
+                                            <md-tooltip>{{c}}</md-tooltip>
+                                            <img ng-src="{{getImgCategory(c)}} " class="img-circle" width="30px " height="30px "> 
+                                        </a>  
+                                </span>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" ng-if="userData.experience.length > 0" layout-padding>
+                                <h5><b>EXPERIENCE</b> : &nbsp</h5>
+                                <span ng-repeat="c in userData.experience">
+                                    <a href="">
+                                        <md-tooltip>{{c.category}}</md-tooltip>
+                                        <img ng-src="{{getImgCategory(c.category)}} " class="img-circle " width="30px " height="30px ">
+                                    </a>
+                                </span>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" ng-if="userData.qualification.length > 0" layout-padding>
+                                <h5><b>QUALIFICATION:</b> &nbsp</h5>
+                                <span ng-repeat="c in userData.qualification">
+                                        {{c.stage}}
+                                </span>
+                            </div>
+                            <md-divider></md-divider>
+                            <div layout="row" ng-if="projData.length > 0" layout-padding>
+                                <h5><b>PROJECTS: </b> &nbsp</h5>
+                                <md-list flex="100">
+                                    <md-list-item class="md-2-line" ng-repeat="c in projData" ng-click="selectUser(user._id)">
+                                        <md-divider></md-divider>
+                                        <h4>{{$index+1}}</h4> : &nbsp
+                                        <img ng-src="{{getImgCategory(c.category)}}" class="md-avatar" alt="alt" />
+                                        <div class="md-list-item-text" layout="column">
+                                            <h4>{{ c.name }}</h4>
+                                            <h4>{{ c.description }}</h4>
+                                            <h4>
+                                                <!--{{c.participant}}-->
+                                                <span ng-repeat="p in c.participant">
+                                                    <md-tooltip>
+                                                        {{p.name}}
+                                                    </md-tooltip>
+                                                    <img ng-src="/images/{{p.image}}" class="img-circle" alt="alt" width="20px " height="20px" />
+                                                </span>
+                                            </h4>
+                                        </div>
+                                    </md-list-item>
+                                </md-list>
+                            </div>
+                        </div>
+                    </md-content>
+                </md-container>
+            </md-content>
+        </md-tab>
+
+
+        <md-tab label="PROJECTS">
+            <md-content>
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-icon ng-bind="'search'"></md-icon>
+                    <label>Search</label>
+                    <input ng-model="projFilter">
+                </md-input-container>
+                <md-container layout-padding layout="row">
+
+                    <md-list flex="100">
+
+                        <md-list-item class="md-3-line" ng-repeat="c in allProjects|filter:projFilter" ng-click="selectUser(user._id)">
+
+                            <img ng-src="{{getImgCategory(c.category)}}" class="md-avatar" alt="alt" />
+                            <div class="md-list-item-text" layout="column">
+                                <h3>{{ c.name }}</h3>
+                                <h4>Status : {{ c.projectStatus }}</h4>
+                                <p>{{c.description}}</p>
+                            </div>
+                            <span flex></span>
+                            <md-button class="md-fab md-mini md-primary" ng-click="getProjectInfo(c._id)">
+                                <md-tooltip>Info</md-tooltip>
+                                <md-icon ng-bind="'info'"></md-icon>
+                            </md-button>
+                        </md-list-item>
+                    </md-list>
+                </md-container>
+            </md-content>
+        </md-tab>
+
+        <md-tab label="HIRE">
+            <md-content>
+
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-icon ng-bind="'search'"></md-icon>
+                    <label>Search</label>
+                    <input ng-model="hireFilter">
+                </md-input-container>
+
+                <md-container layout-padding layout="row">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>
+                                Employer Id/Employee Id
+                            </th>
+                            <th>
+                                Accomplishment Date
+                            </th>
+                            <th>
+                                Project Id
+                            </th>
+                            <th>
+                                Chatroom Id
+                            </th>
+                            <th>
+                                Amount
+                            </th>
+                            <th>
+                                Status
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="hire in hireData|filter:hireFilter">
+                                <td>
+                                    {{hire.employerId}}<br/>{{hire.employeeId}}
+                                </td>
+                                <td>
+                                    {{hire.aDate|date:'medium'}}
+                                </td>
+                                <td>
+                                    {{hire.projectId}}
+                                </td>
+                                <td>
+                                    {{hire.chatroomId}}
+                                </td>
+                                <td>
+                                    {{hire.amount}}
+                                </td>
+                                <td>
+                                    {{hire.status}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </md-container>
+
+            </md-content>
+        </md-tab>
+
+
+        <md-tab label="REPORT">
+            <md-content>
+
+                <md-input-container class="md-block" flex-gt-xs>
+                    <md-icon ng-bind="'search'"></md-icon>
+                    <label>Search</label>
+                    <input ng-model="reportFilter">
+                </md-input-container>
+
+                <md-container layout-padding layout="row">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>
+                                ReporterId
+                            </th>
+                            <th>
+                                Type
+                            </th>
+                            <th>
+                                Filed Id
+                            </th>
+                            <th>
+                                Content
+                            </th>
+                            <th>
+                                Date
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="report in reportData|filter:reportFilter">
+                                <td>
+                                    {{report.userId}}
+                                </td>
+                                <td>
+                                    {{report.type}}
+                                </td>
+                                <td>
+                                    {{report.fileId}}
+                                </td>
+                                <td>
+                                    {{report.content}}
+                                </td>
+                                <td>
+                                    {{report.createdAt | date:'medium'}}
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </md-container>
+
+            </md-content>
+        </md-tab>
+
+        <md-tab label="CATEGORY ">
+            <md-content>
+                <md-container layout-padding>
+                    <md-list flex>
+                        <div layout="row ">
+                            <md-subheader class="md-no-sticky ">CATEGORY </md-subheader>
+                            <span flex></span>
+                            <md-button class="md-fab md-mini md-primary " href=" ">
+                                <md-icon ng-bind=" 'add' " ng-click="addNewModal() "></md-icon>
+                            </md-button>
+                        </div>
+                        <md-list-item class="md-2-line " ng-repeat="cat in cats " ng-click="null ">
+                            <img ng-src="{{cat.url}} " class="md-avatar " />
+                            <div class="md-list-item-text " layout="column ">
+                                <h3>{{ cat.name }}</h3>
+                            </div>
+                            <span flex></span>
+                            <md-button class="md-fab md-mini md-primary " href=" ">
+                                <md-icon ng-bind=" 'delete' " ng-click="deleteCat(cat,$index) "></md-icon>
+                            </md-button>
+                            <md-button class="md-fab md-mini md-primary " href=" ">
+                                <md-icon ng-bind=" 'create' " ng-click="editModal(cat) "></md-icon>
+                            </md-button>
+                        </md-list-item>
+                    </md-list>
+                </md-container>
+            </md-content>
+        </md-tab>
+
+</md-content>
